@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packages & Services | Baby J Collective</title>
+<meta name="description" content="Explore Baby J Collective's registry packages and add-on edit services. From a quick registry refresh to a full concierge experience — find the right fit for your family.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF6F0; --cream-deep: #F2EBE0; --cream-mid: #EDE3D4;
+    --gold: #9E7B3F; --gold-light: #C4A265; --gold-pale: #F5EDD8;
+    --gold-border: #D6BC8A; --brown-dark: #2E1F0E; --brown-mid: #5C4025;
+    --text-body: #4A3728; --text-muted: #8C7B6B; --white: #FFFDF9;
+    --sage: #7A9478; --sage-light: #EBF0EA; --sage-mid: #C2D4BF; --sage-border: #B8CCAF;
+  }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-body); }
+ 
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; background: var(--white); border-bottom: 1px solid var(--gold-border); position: sticky; top: 0; z-index: 100; }
+  .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--brown-dark); letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; }
+  .logo span { color: var(--gold); }
+  .logo em { font-style: italic; font-weight: 300; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 12px; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active:not(.btn-nav) { color: var(--gold); }
+  .btn-nav { display: inline-block; background: transparent; color: var(--gold); border: 1px solid var(--gold-border); padding: 8px 20px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+  .btn-nav:hover { background: var(--gold); color: var(--white); }
+  .btn-nav.active { background: var(--gold); color: var(--white); }
+ 
+  .sparkle-divider { text-align: center; padding: 14px 0; background: var(--cream); color: var(--gold-light); font-size: 14px; letter-spacing: 12px; opacity: 0.7; }
+ 
+  .sec-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.75rem; }
+  .sec-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 300; color: var(--brown-dark); text-align: center; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+  .sec-sub { font-size: 14px; font-weight: 300; color: var(--text-muted); text-align: center; margin-bottom: 3rem; line-height: 1.7; }
+ 
+  .pkg-toggle, .addon-toggle { background: transparent; border: none; color: var(--gold); font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 6px; margin-top: 0.25rem; }
+  .pkg-toggle .chevron, .addon-toggle .chevron { width: 14px; height: 14px; transition: transform 0.25s ease; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pkg-toggle.open .chevron, .addon-toggle.open .chevron { transform: rotate(180deg); }
+  .pkg-details, .addon-includes { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .pkg-details.open, .addon-includes.open { max-height: 600px; }
+ 
+  footer { background: var(--sage-light); padding: 2rem; text-align: center; border-top: 1px solid var(--sage-border); margin-top: 0; }
+  .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  footer p { font-size: 11px; font-weight: 300; color: var(--text-muted); letter-spacing: 0.5px; }
+  footer a { color: var(--gold); text-decoration: none; }
+ 
+  @media (max-width: 620px) {
+    nav { flex-direction: column; gap: 0.75rem; padding: 1rem 1.25rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; width: 100%; }
+    .logo { font-size: 18px; }
+  }
+ 
+ 
+  .pkg-hero { background: var(--cream-deep); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 1px solid var(--gold-border); }
+  .pkg-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; font-weight: 300; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  .pkg-hero p { font-size: 15px; font-weight: 300; color: var(--text-muted); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+ 
+  .packages { background: var(--cream); padding: 4rem 2rem; }
+  .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
+  .pkg { background: var(--white); border: 1px solid var(--cream-mid); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+  .pkg:hover { box-shadow: 0 8px 32px rgba(158,123,63,0.08); }
+  .pkg.popular { border: 1px solid var(--gold-border); background: var(--gold-pale); }
+  .pop-badge { display: block; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .pkg-icon { width: 48px; height: 48px; border-radius: 50%; background: var(--sage-light); border: 1px solid var(--sage-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+  .pkg.popular .pkg-icon { background: var(--white); border-color: var(--gold-border); }
+  .pkg-icon svg { width: 24px; height: 24px; stroke: var(--sage); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .pkg.popular .pkg-icon svg { stroke: var(--gold); }
+  .pkg-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--brown-dark); margin-bottom: 0.4rem; }
+  .pkg-best { font-size: 12px; font-weight: 300; color: var(--text-muted); font-style: italic; margin-bottom: 1rem; line-height: 1.5; }
+  .pkg-divider { border: none; border-top: 1px solid var(--gold-border); margin-bottom: 1rem; opacity: 0.4; }
+  .pkg-deliverable { font-size: 12px; font-weight: 300; font-style: italic; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+  .pkg ul { list-style: none; padding: 0; margin: 0.75rem 0 0.5rem; }
+  .pkg ul li { font-size: 12px; font-weight: 300; color: var(--text-body); line-height: 1.6; padding: 4px 0 4px 22px; position: relative; }
+  .pkg ul li::before { content: "\2726"; position: absolute; left: 0; top: 4px; color: var(--gold); font-size: 11px; }
+  .pkg-btn { display: block; text-decoration: none; text-align: center; background: var(--gold); color: var(--white); border: none; padding: 10px 16px; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; width: 100%; transition: all 0.2s; margin-top: 1.25rem; }
+  .pkg-btn:hover { background: var(--brown-mid); }
+  .pkg-btn.ghost { background: transparent; color: var(--brown-dark); border: 1px solid var(--gold-border); }
+  .pkg-btn.ghost:hover { background: var(--gold-pale); }
+ 
+  .addons { background: var(--sage-light); padding: 3.5rem 2rem; border-top: 1px solid var(--sage-border); border-bottom: 1px solid var(--sage-border); }
+  .addons .sec-eyebrow { color: var(--sage); }
+  .addon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1300px; margin: 0 auto; }
+  .addon { background: var(--white); border: 1px solid var(--sage-mid); padding: 1.25rem; display: flex; flex-direction: column; }
+  .addon-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 400; color: var(--brown-dark); margin-bottom: 0.5rem; }
+  .addon-desc { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+  .addon-includes-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin: 0.75rem 0 0.5rem; }
+  .addon ul { list-style: none; padding: 0; }
+  .addon ul li { font-size: 12px; font-weight: 300; color: var(--text-body); line-height: 1.6; padding: 4px 0 4px 22px; position: relative; }
+  .addon ul li::before { content: "\2726"; position: absolute; left: 0; top: 4px; color: var(--gold); font-size: 11px; }
+ 
+  .pkg-cta { background: var(--gold-pale); border-top: 1px solid var(--gold-border); padding: 4rem 2rem; text-align: center; }
+  .pkg-cta h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; font-weight: 300; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  .pkg-cta p { font-size: 14px; font-weight: 300; color: var(--text-muted); margin-bottom: 2rem; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--white); border: none; padding: 14px 32px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+  .btn-gold:hover { background: var(--brown-mid); }
+  .hero-ornament { color: var(--gold-light); font-size: 18px; letter-spacing: 8px; margin-bottom: 1rem; opacity: 0.7; }
+ 
+  @media (max-width: 980px) { .addon-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) {
+    .addon-grid { grid-template-columns: 1fr; }
+    .packages, .addons, .pkg-hero, .pkg-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .pkg-hero h1 { font-size: 30px; }
+    .sec-title { font-size: 26px; }
+  }
+ 
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Baby <em>J</em> <span>Collective</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="packages.html" class="active">Packages</a>
+    <a class="btn-nav " href="contact.html">Begin</a>
+  </div>
+</nav>
+ 
+<section class="pkg-hero">
+  <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+  <h1>Every family, every season.</h1>
+  <p>From a simple registry refresh to a fully done-for-you experience &#8212; find the package that fits your family.</p>
+</section>
+ 
+<div class="sparkle-divider">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+ 
+<section class="packages">
+  <p class="sec-eyebrow">Our offerings</p>
+  <p class="sec-title">The Collections</p>
+  <p class="sec-sub">Choose the experience that feels right for where you are.</p>
+  <div class="pkg-grid">
+ 
+    <div class="pkg">
+      <div class="pkg-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+      <div class="pkg-name">The Refined Collection</div>
+      <div class="pkg-best">For parents who&#8217;ve already started a registry and want expert feedback</div>
+      <hr class="pkg-divider">
+      <p class="pkg-deliverable">What you&#8217;ll receive: a professionally reviewed registry with customized recommendations.</p>
+      <button class="pkg-toggle" onclick="togglePanel(this, 'pkg-1')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="pkg-details" id="pkg-1"><ul><li>Review of existing registry</li><li>Personalized add &amp; remove recommendations</li><li>Budget analysis</li><li>Written feedback document</li><li>One round of email questions</li></ul></div>
+    </div>
+ 
+    <div class="pkg popular">
+      <div class="pkg-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9-8.5C1.5 9 3.5 6 7 6c2 0 4 1.5 5 3 1-1.5 3-3 5-3 3.5 0 5.5 3 4 6.5C19 16.65 12 21 12 21z"/></svg></div>
+      <div class="pop-badge">&#10022; &nbsp; Most popular</div>
+      <div class="pkg-name">The Curated Collection</div>
+      <div class="pkg-best">For first-time parents who want a registry thoughtfully built from the ground up</div>
+      <hr class="pkg-divider">
+      <p class="pkg-deliverable">What you&#8217;ll receive: a complete registry with up to 50 personalized recommendations.</p>
+      <button class="pkg-toggle" onclick="togglePanel(this, 'pkg-2')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="pkg-details" id="pkg-2"><ul><li>New client questionnaire</li><li>30-minute consultation call</li><li>Customized registry with all essential categories</li><li>Recommendations tailored to budget, home size, lifestyle, gear preferences &amp; feeding goals</li></ul></div>
+    </div>
+ 
+    <div class="pkg">
+      <div class="pkg-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18"/><circle cx="7" cy="5" r="1.4" fill="currentColor"/><circle cx="14" cy="12" r="1.4" fill="currentColor"/><circle cx="10" cy="19" r="1.4" fill="currentColor"/></svg></div>
+      <div class="pkg-name">The Signature Collection</div>
+      <div class="pkg-best">For busy professionals who want a completely done-for-you experience</div>
+      <hr class="pkg-divider">
+      <p class="pkg-deliverable">What you&#8217;ll receive: a complete, turnkey registry experience.</p>
+      <button class="pkg-toggle" onclick="togglePanel(this, 'pkg-3')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="pkg-details" id="pkg-3"><ul><li>Detailed intake questionnaire</li><li>60-minute consultation</li><li>Fully built registry</li><li>Multiple retailer recommendations</li><li>Budget planning guide</li><li>Nursery must-have checklist</li><li>Hospital bag checklist</li><li>Fourth trimester essentials guide</li><li>Two weeks of email support</li></ul></div>
+    </div>
+ 
+    <div class="pkg">
+      <div class="pkg-icon"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 8 8 6 4 6c0 4 2 8 8 8"/><path d="M12 12c0-4 4-6 8-6 0 4-2 8-8 8"/></svg></div>
+      <div class="pkg-name">The Growing Collection</div>
+      <div class="pkg-best">For parents welcoming another baby and building on what they already have</div>
+      <hr class="pkg-divider">
+      <p class="pkg-deliverable">What you&#8217;ll receive: a streamlined registry tailored to your growing family&#8217;s needs.</p>
+      <button class="pkg-toggle" onclick="togglePanel(this, 'pkg-4')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="pkg-details" id="pkg-4"><ul><li>Existing baby gear inventory review</li><li>Recommendations on what can be reused</li><li>Upgrade and replacement suggestions</li><li>Registry focused on current needs</li><li>Product recommendations for age gaps &amp; sibling transitions</li></ul></div>
+    </div>
+ 
+  </div>
+ 
+  <div style="text-align:center; margin-top: 2.5rem;">
+    <a class="pkg-btn" href="contact.html" style="display:inline-block; width:auto; padding: 14px 40px;">Begin your journey</a>
+  </div>
+</section>
+ 
+<div class="sparkle-divider">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+ 
+<section class="addons">
+  <p class="sec-eyebrow">Enhancements</p>
+  <p class="sec-title">The Edits</p>
+  <p class="sec-sub">Add to any package to deepen your experience.</p>
+  <div class="addon-grid">
+    <div class="addon">
+      <div class="addon-name">The Completion Edit</div>
+      <div class="addon-desc">A final review of your registry between 32&#8211;36 weeks to ensure you&#8217;re fully prepared before baby arrives.</div>
+      <button class="addon-toggle" onclick="togglePanel(this, 'addon-1')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="addon-includes" id="addon-1"><div class="addon-includes-label">Includes</div><ul><li>Registry audit and review</li><li>Identification of missing essentials</li><li>Duplicate item review</li><li>Recommendations based on your registry progress</li><li>Personalized feedback and suggestions</li></ul></div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">The Grandparent Edit</div>
+      <div class="addon-desc">A curated list of baby essentials grandparents should have on hand to make visits and overnight stays easy and comfortable.</div>
+      <button class="addon-toggle" onclick="togglePanel(this, 'addon-2')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="addon-includes" id="addon-2"><div class="addon-includes-label">Includes</div><ul><li>Customized grandparent essentials checklist</li><li>Recommendations based on baby&#8217;s age and needs</li><li>Budget-friendly product suggestions</li><li>Shopping links for recommended items</li></ul></div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">The Nursery Edit</div>
+      <div class="addon-desc">Need help bringing your nursery vision to life? I&#8217;ll provide personalized recommendations based on your style, budget, and space.</div>
+      <button class="addon-toggle" onclick="togglePanel(this, 'addon-3')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="addon-includes" id="addon-3"><div class="addon-includes-label">Includes</div><ul><li>Nursery style questionnaire</li><li>Personalized inspiration board</li><li>Color palette recommendations</li><li>Furniture and d&#233;cor suggestions</li><li>Organization and storage ideas</li><li>Shopping links for recommended products</li></ul></div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">The Shower Edit</div>
+      <div class="addon-desc">Perfect for parents or hosts looking for a little extra guidance when planning a baby shower.</div>
+      <button class="addon-toggle" onclick="togglePanel(this, 'addon-4')">See what&#8217;s included <svg class="chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="addon-includes" id="addon-4"><div class="addon-includes-label">Includes</div><ul><li>Theme and color palette recommendations</li><li>Invitation wording suggestions</li><li>D&#233;cor inspiration</li><li>Food and beverage ideas</li><li>Activity and game recommendations</li><li>Baby shower planning checklist</li><li>Favor and gift table ideas</li></ul></div>
+    </div>
+  </div>
+</section>
+ 
+<div class="sparkle-divider">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+ 
+<section class="pkg-cta">
+  <h2>Not sure which package is right for you?</h2>
+  <p>Reach out and we&#8217;ll help you find the perfect fit for your family.</p>
+  <a class="btn-gold" href="contact.html">Get in touch</a>
+</section>
+ 
+<footer>
+  <div class="footer-logo">Baby J Collective</div>
+  <p style="margin-bottom: 0.75rem;"><a href="mailto:babyjcollective@gmail.com">babyjcollective@gmail.com</a></p>
+  <p>&copy; 2026 &nbsp;&middot;&nbsp; <a href="index.html">Home</a> &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="packages.html">Packages</a> &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></p>
+</footer>
+<script>
+function togglePanel(btn, id) {
+  const panel = document.getElementById(id);
+  const isOpen = panel.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.firstChild.textContent = isOpen ? 'Hide details ' : "See what's included ";
+}
+</script>
+</body>
+</html>
