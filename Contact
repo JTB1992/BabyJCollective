@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | Baby J Collective</title>
+<meta name="description" content="Ready to build your dream baby registry? Get in touch with Baby J Collective and we'll be in touch within 1–2 business days to begin your personalized registry journey.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF6F0; --cream-deep: #F2EBE0; --cream-mid: #EDE3D4;
+    --gold: #9E7B3F; --gold-light: #C4A265; --gold-pale: #F5EDD8;
+    --gold-border: #D6BC8A; --brown-dark: #2E1F0E; --brown-mid: #5C4025;
+    --text-body: #4A3728; --text-muted: #8C7B6B; --white: #FFFDF9;
+    --sage: #7A9478; --sage-light: #EBF0EA; --sage-mid: #C2D4BF; --sage-border: #B8CCAF;
+  }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-body); }
+ 
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; background: var(--white); border-bottom: 1px solid var(--gold-border); position: sticky; top: 0; z-index: 100; }
+  .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--brown-dark); letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; }
+  .logo span { color: var(--gold); }
+  .logo em { font-style: italic; font-weight: 300; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 12px; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active:not(.btn-nav) { color: var(--gold); }
+  .btn-nav { display: inline-block; background: transparent; color: var(--gold); border: 1px solid var(--gold-border); padding: 8px 20px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+  .btn-nav:hover { background: var(--gold); color: var(--white); }
+  .btn-nav.active { background: var(--gold); color: var(--white); }
+ 
+  .sparkle-divider { text-align: center; padding: 14px 0; background: var(--cream); color: var(--gold-light); font-size: 14px; letter-spacing: 12px; opacity: 0.7; }
+ 
+  .sec-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.75rem; }
+  .sec-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; font-weight: 300; color: var(--brown-dark); text-align: center; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+  .sec-sub { font-size: 14px; font-weight: 300; color: var(--text-muted); text-align: center; margin-bottom: 3rem; line-height: 1.7; }
+ 
+  .pkg-toggle, .addon-toggle { background: transparent; border: none; color: var(--gold); font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 6px; margin-top: 0.25rem; }
+  .pkg-toggle .chevron, .addon-toggle .chevron { width: 14px; height: 14px; transition: transform 0.25s ease; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pkg-toggle.open .chevron, .addon-toggle.open .chevron { transform: rotate(180deg); }
+  .pkg-details, .addon-includes { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .pkg-details.open, .addon-includes.open { max-height: 600px; }
+ 
+  footer { background: var(--sage-light); padding: 2rem; text-align: center; border-top: 1px solid var(--sage-border); margin-top: 0; }
+  .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  footer p { font-size: 11px; font-weight: 300; color: var(--text-muted); letter-spacing: 0.5px; }
+  footer a { color: var(--gold); text-decoration: none; }
+ 
+  @media (max-width: 620px) {
+    nav { flex-direction: column; gap: 0.75rem; padding: 1rem 1.25rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; width: 100%; }
+    .logo { font-size: 18px; }
+  }
+ 
+ 
+  .contact-hero { background: var(--cream-deep); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 1px solid var(--gold-border); }
+  .contact-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; font-weight: 300; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  .contact-hero p { font-size: 15px; font-weight: 300; color: var(--text-muted); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+  .hero-ornament { color: var(--gold-light); font-size: 18px; letter-spacing: 8px; margin-bottom: 1rem; opacity: 0.7; }
+ 
+  .contact { background: var(--cream); padding: 4rem 2rem; }
+  .form-card { max-width: 580px; margin: 0 auto; background: var(--white); border: 1px solid var(--gold-border); padding: 2.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .fg label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+  .fg input, .fg select, .fg textarea { padding: 11px 14px; border: 1px solid var(--cream-mid); font-size: 14px; font-weight: 300; font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-body); width: 100%; transition: border-color 0.2s; }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--gold); background: var(--white); box-shadow: 0 0 0 3px rgba(158,123,63,0.08); }
+  .fg textarea { resize: vertical; min-height: 110px; }
+  .fg select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%238C7B6B' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; background-color: var(--cream); }
+  .optional { font-size: 9px; color: var(--text-muted); font-weight: 300; margin-left: 4px; text-transform: none; letter-spacing: 0; }
+  .submit-btn { background: var(--gold); color: var(--white); border: none; padding: 14px 24px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s; }
+  .submit-btn:hover { background: var(--brown-mid); }
+  .privacy { font-size: 11px; font-weight: 300; color: var(--text-muted); text-align: center; margin-top: 1rem; line-height: 1.6; }
+  .success-msg { display: none; text-align: center; padding: 2.5rem 1rem; }
+  .success-ornament { font-size: 28px; color: var(--gold-light); margin-bottom: 1rem; letter-spacing: 6px; }
+  .success-msg h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 300; color: var(--brown-dark); margin-bottom: 0.75rem; }
+  .success-msg p { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.75; }
+ 
+  @media (max-width: 620px) {
+    .contact-hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .contact-hero h1 { font-size: 30px; }
+    .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+ 
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Baby <em>J</em> <span>Collective</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="packages.html" class="">Packages</a>
+    <a class="btn-nav active" href="contact.html">Begin</a>
+  </div>
+</nav>
+ 
+<section class="contact-hero">
+  <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+  <h1>We&#8217;d love to hear from you.</h1>
+  <p>Share a little about your family and we&#8217;ll be in touch within 1&#8211;2 business days.</p>
+</section>
+ 
+<div class="sparkle-divider">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+ 
+<section class="contact">
+  <div class="form-card">
+    <form id="contact-form" action="https://formspree.io/f/xpqenkaw" method="POST" onsubmit="return handleSubmit(event)">
+    <div id="form-body">
+      <div class="form-row">
+        <div class="fg" style="margin-bottom:0"><label>First name</label><input type="text" id="fname" name="fname" placeholder="Jane" required></div>
+        <div class="fg" style="margin-bottom:0"><label>Last name</label><input type="text" id="lname" name="lname" placeholder="Smith"></div>
+      </div>
+      <div class="fg"><label>Email address</label><input type="email" id="email" name="email" placeholder="jane@email.com" required></div>
+      <div class="fg"><label>Which package interests you?</label>
+        <select id="package" name="package" required>
+          <option value="">Select a package...</option>
+          <option>The Refined Collection</option>
+          <option>The Curated Collection</option>
+          <option>The Signature Collection</option>
+          <option>The Growing Collection</option>
+          <option>Not sure yet &#8212; help me decide</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="fg" style="margin-bottom:0"><label>Due date <span class="optional">(optional)</span></label><input type="month" id="due-date" name="due-date"></div>
+        <div class="fg" style="margin-bottom:0"><label>First baby?</label>
+          <select><option value="">Select...</option><option>Yes, first time!</option><option>No, we have other children</option><option>Prefer not to say</option></select>
+        </div>
+      </div>
+      <div class="fg" style="margin-top:16px"><label>Add-ons you&#8217;re considering <span class="optional">(optional)</span></label>
+        <select><option value="">Select an add-on...</option><option>The Completion Edit</option><option>The Grandparent Edit</option><option>The Nursery Edit</option><option>The Shower Edit</option></select>
+      </div>
+      <div class="fg"><label>Anything else you&#8217;d like to share <span class="optional">(optional)</span></label><textarea id="message" name="message" placeholder="Tell us about your timeline, wishes, or any questions on your heart..."></textarea></div>
+      <button type="submit" class="submit-btn">Send my inquiry &nbsp;&#10022;</button>
+      <p class="privacy">&#10022; &nbsp; Your details are kept with the utmost care and never shared. We respond within 1&#8211;2 business days.</p>
+    </div>
+    <div class="success-msg" id="success-msg">
+      <div class="success-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+      <h3>Thank you, mama.</h3>
+      <p>Your message has been received with so much warmth. We&#8217;ll be in touch within 1&#8211;2 business days.</p>
+    </div>
+    </form>
+  </div>
+</section>
+ 
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contact-form');
+  const data = new FormData(form);
+ 
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      alert("Something went wrong sending your message. Please try again or email us directly at babyjcollective@gmail.com.");
+    }
+  })
+  .catch(() => {
+    alert("Something went wrong sending your message. Please try again or email us directly at babyjcollective@gmail.com.");
+  });
+ 
+  return false;
+}
+</script>
+ 
+<footer>
+  <div class="footer-logo">Baby J Collective</div>
+  <p style="margin-bottom: 0.75rem;"><a href="mailto:babyjcollective@gmail.com">babyjcollective@gmail.com</a></p>
+  <p>&copy; 2026 &nbsp;&middot;&nbsp; <a href="index.html">Home</a> &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="packages.html">Packages</a> &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></p>
+</footer>
+<script>
+function togglePanel(btn, id) {
+  const panel = document.getElementById(id);
+  const isOpen = panel.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.firstChild.textContent = isOpen ? 'Hide details ' : "See what's included ";
+}
+</script>
+</body>
+</html>
